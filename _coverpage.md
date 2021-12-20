@@ -9,5 +9,5 @@
 - less is more
 
 [GitHub](https://github.com/mkdirhao)
-[Get Started](/#mkdirhao'sblog)
+[Get Started](/#mkdirhao)
 
