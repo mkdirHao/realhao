@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud</title>
+  <link rel="icon" href="_media/icon.svg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+
+<body>
+  <div id="app">马上就好！！</div>
+  <script>
+    window.$docsify = {
+      name: 'Cloud',
+      //repo: 'https://github.com/mkdirhao/cloud',
+      loadSidebar: true,
+      auto2top: true,
+      autoHeader: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      subMaxLevel: 2,
+      coverpage: true,
+      search: 'auto', // 默认值
+      //disqus: 'shortname',
+      count: {
+        countable: true,
+        fontsize: '0.9em',
+        color: 'rgb(90,90,90)',
+        language: 'chinese'
+      },
+      plugins: [
+            function (hook, vm) {
+                var footer = [
+                    '<hr/>',
+                    '<footer>',
+                    '<p style="text-align: center"><img src="./_media/icon.svg"></p>',
+                    '<p style="text-align: center"><span>来找我玩呀微信：mkdirhao 。</span></p>',
+                    '</footer>'
+                ].join('');
+
+
+                hook.beforeEach(function (html) {
+                    var url =
+                        'https://github.com/mkdirhao/CloudNative/blob/master/' +
+                        vm.route.file;
+                    var editHtml = '[📝 修改文章](' + url + ')\n';
+
+                    return (
+                        editHtml +
+                        html
+                    );
+                });
+
+                hook.afterEach(function (html) {
+                    return html + footer;
+                });
+            }
+        ]
+      
+
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <!-- < script>
+  const gitalk = new Gitalk({
+    clientID: 'bb7866b19fa4b319a416',
+    clientSecret: '17cb7c31e23708b68b8c9e758b08a8c11a18a3ca',
+    repo: 'daily',
+    owner: 'YanJieMao',
+    admin: [
+      'YanJieMao'
+    ],
+    //id: decodeURI(location.href.replace(location.protocol + "//" +location.host)),
+    // facebook-like distraction free mode
+    createIssueManually: false,
+    distractionFreeMode: true
+  })
+  
+</script> -->
+
+  
+</body>
+
+</html>
